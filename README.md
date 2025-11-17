@@ -2,6 +2,10 @@
 
 Este README descreve o arquivo `dynamic_gs.py` e explica, passo a passo, cada função presente no código, entradas/saídas, comportamento recursivo e uso de memoização.
 
+## Integrantes
+- Bruno Biletsky RM:554739
+- Victor Freire RM:556191
+
 ## Entrada
 
 O código possui uma listas de cards com titulo, custo e impacto. O usuário pode inserir mais cards durante a execução do programa.
