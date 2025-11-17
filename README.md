@@ -108,11 +108,6 @@ Como funciona (passo a passo):
 6. Compara `com_card` e `sem_card` por impacto; escolhe a melhor opção e monta a lista de selecionados adequadamente (`lista_com + [atual]` quando inclui).
 7. Armazena o resultado em `memo[(i, capacidade)]` e retorna.
 
-Notas:
-- A função é recursiva e depende de `memo` para eficiência — sem memoização, o tempo cresce exponencialmente.
-- Não há limpeza automática de `memo` entre chamadas; se preferir usar um cache global, é possível adaptar.
-
-
 ### gerar_relatorio(capacidade_total)
 
 O que faz:
@@ -124,7 +119,7 @@ Entradas:
 - `capacidade_total` (int): horas disponíveis.
 
 Saída:
-- Imprime o relatório no stdout. Também armazena a string do relatório em `_gerar_cache[capacidade_total]`.
+- Imprime o relatório. Também armazena a string do relatório em `_gerar_cache[capacidade_total]`.
 
 Como funciona (passo a passo):
 1. Se `capacidade_total` já estiver em `_gerar_cache`, imprime o relatório memoizado e retorna.
@@ -135,8 +130,6 @@ Como funciona (passo a passo):
 6. `body = format_sel(selecionados, 0)`, concatena e produz o relatório final.
 7. Armazena o relatório em `_gerar_cache[capacidade_total]` e imprime.
 
-Notas:
-- O cache do relatório é por `capacidade_total`. Se `cards` mudar entre chamadas, o relatório memoizado pode ficar desatualizado. Veja seção "Caches e invalidação" abaixo.
 
 
 ### Bloco principal (`if __name__ == "__main__":`)
@@ -145,8 +138,4 @@ Comportamento:
 - Loop interativo que permite ao usuário adicionar novos cards via input.
 - Após sair do loop, o programa ordena `cards` com `quick_sort(cards)` e chama `gerar_relatorio(capacidade_total=8)`.
 
-Observações:
-- O loop adiciona também um card extra com `cards.append({"titulo": f"Card {len(cards)+1}", "custo": op, "impacto": op * 2})` baseado na opção fornecida pelo usuário — isso parece um hack de teste/auxiliar. Se for indesejado, pode ser removido.
-
----
 
