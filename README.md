@@ -2,9 +2,17 @@
 
 Este README descreve o arquivo `dynamic_gs.py` e explica, passo a passo, cada função presente no código, entradas/saídas, comportamento recursivo e uso de memoização.
 
+## Entrada
+
+O código possui uma listas de cards com titulo, custo e impacto. O usuário pode inserir mais cards durante a execução do programa.
+
 ## Objetivo
 
-O código busca ajudar o funcionário a decidir quais tarefas escolher para obter maios impacto (produtividade) dentro das 8 horas de trabalho disponíveis. 
+O código busca ajudar o funcionário a decidir quais tarefas escolher para obter maios impacto (produtividade) dentro das 8 horas de trabalho disponíveis. Uma espécie de problema da mochila, porém para produtividade e tomada de decisão no ambiente de trabalho. 
+
+## Saida
+
+O código exibe um dataframe ordenado e uma lista contendo a combinação das tarefas que causará maior impacto em vista do limite de tempo (8 horas).
 
 ## Visão geral
 
